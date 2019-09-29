@@ -1,23 +1,13 @@
 service: s3-manager-server
 
- 
 provider:
   name: aws
   runtime: nodejs10.x
-  environment:   
-    S3_BUCKET_NAME: "s3-manager-bucket"
-    REGION: "us-west-2"   
-    
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - s3:PutObject
-      Resource: "arn:aws:s3:::S3_BUCKET_NAME/*"
-
+     
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
-
+  - serverless-iam-roles-per-function
 
 functions:
   upload-on-s3: ${file(./uploadOnS3/serverless.functions.yml):upload-on-s3}   
