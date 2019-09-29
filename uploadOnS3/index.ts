@@ -1,12 +1,6 @@
 import { APIGatewayEvent } from "aws-lambda";
 import AWS = require("aws-sdk");
-
-interface Response {
-  statusCode: number;
-  body: any;
-  headers?: any;
-  cors?: boolean;
-}
+import { Response } from "../libs";
 
 interface S3Object {
   Bucket: string;
@@ -16,21 +10,6 @@ interface S3Object {
   ContentEncoding?: string;
   ACL?: string;
 }
-
-const Response = (args: Response) => {
-  const { statusCode, body, cors } = args;
-  const response: Response = {
-    body: JSON.stringify(body),
-    statusCode,
-  };
-  if (cors) {
-    response.headers = {
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Max-Age": 600,
-    };
-  }
-  return response;
-};
 
 const { S3_BUCKET_NAME: Bucket, REGION: region } = process.env;
 

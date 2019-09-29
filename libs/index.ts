@@ -1,6 +1,6 @@
 interface Response {
   statusCode: number;
-  body: string | Blob | ArrayBuffer;
+  body: any;
   headers?: any;
   cors?: boolean;
 }
