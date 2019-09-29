@@ -1,0 +1,16 @@
+upload-on-s3:
+  handler: uploadOnS3/index.uploadOnS3
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+      Resource: "arn:aws:s3:::S3_BUCKET_NAME/"
+      
+  environment:   
+    S3_BUCKET_NAME: "s3-manager-bucket"
+    REGION: "us-west-2"   
+  events:
+    - http:
+        path: upload-on-s3
+        method: PUT
+        cors: true

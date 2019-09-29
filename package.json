@@ -1,0 +1,19 @@
+{
+  "name": "s3-manager-server",
+  "version": "0.1.0",
+  "author": "Tommaso Zagni",
+  "private": true,
+  "scripts": {
+    "start.local": "npx sls offline start"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.33",
+    "aws-sdk": "^2.538.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.8",
+    "serverless-offline": "^5.11.0",
+    "serverless-plugin-typescript": "^1.1.9",
+    "typescript": "^3.6.3"
+  }
+}
