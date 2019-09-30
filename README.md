@@ -33,6 +33,6 @@ Do not forget to set the `API_URL` into the `.env` file
 
 ### PUT upload-on-s3
 
-Upload a file on the selected s3 bucket. Body: `base64` and 'key' where:
+Upload a file on the selected s3 bucket. Body: `base64` and `key` where:
 `base64`: your file converted in base64
 `key`: s3 key
