@@ -4,10 +4,10 @@ upload-on-s3:
     - Effect: Allow
       Action:
         - s3:PutObject
-      Resource: "arn:aws:s3:::S3_BUCKET_NAME/*"
+      Resource: arn:aws:s3:::${self:custom.S3_BUCKET_NAME}/*
         
   environment:   
-    S3_BUCKET_NAME: "s3-manager-bucket"
+    S3_BUCKET_NAME: ${self:custom.S3_BUCKET_NAME}
     REGION: "us-west-2"   
 
   events:
