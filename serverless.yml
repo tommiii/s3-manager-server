@@ -13,4 +13,5 @@ plugins:
   - serverless-iam-roles-per-function
 
 functions:
-  upload-on-s3: ${file(./uploadOnS3/serverless.functions.yml):upload-on-s3}   
+  upload-on-s3: ${file(./uploadOnS3/serverless.functions.yml):upload-on-s3}
+  get-upload-persigned-url: ${file(./getUploadPresignedUrl/serverless.functions.yml):get-upload-persigned-url}   
