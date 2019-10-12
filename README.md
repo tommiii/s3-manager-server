@@ -10,14 +10,16 @@ Runs the app in the development mode [http://localhost:3000](http://localhost:30
 
 Deploy on aws 
 
-## Do not forger
+## Do not forget
 
 ### Set your aws variables
 
 Copy and paste the following variable in the same console where you run the app
 
 `export AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY`
+
 `export AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_ACCESS`
+
 `export AWS_DEFAULT_REGION=YOUR_AWS_DEFAULT_REGION`
 
 ### Set your aws s3 bucket
