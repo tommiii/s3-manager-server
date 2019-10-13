@@ -1,5 +1,5 @@
-upload-on-s3:
-  handler: uploadOnS3/index.uploadOnS3
+upload-base-64:
+  handler: uploadBase64/index.uploadBase64
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -12,6 +12,6 @@ upload-on-s3:
 
   events:
     - http:
-        path: upload-on-s3
+        path: upload-base-64
         method: PUT
         cors: true

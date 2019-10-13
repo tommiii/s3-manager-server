@@ -1,19 +1,21 @@
 import { APIGatewayEvent } from "aws-lambda";
+const error = require('debug')('lamba:getObjects');
 import AWS = require("aws-sdk");
-const error = require('debug')('lamba:getUploadPresignedUrl');
 import { Response } from "../libs";
-
 
 const { S3_BUCKET_NAME: Bucket, REGION: region } = process.env;
 
-exports.getUploadPresignedUrl = async (event: APIGatewayEvent): Promise<any> => {
-  if (!event.body) { return Response({ statusCode: 400, body: { message: "BadRequest" } }); }
+interface Params {
+    Bucket: string;
+}
 
+exports.getObjects = async (event: APIGatewayEvent): Promise<any> => {
   try {
-    const { key: Key } = JSON.parse(event.body);
     const s3: AWS.S3 = new AWS.S3({ signatureVersion: "v4", region });
-    const params = {Bucket, Key};
-    const response = await s3.getSignedUrl('putObject', params);
+    const params : Params = {
+        Bucket: Bucket as string,
+    }
+    const response = await s3.listObjects(params).promise();
     return Response({ statusCode: 200, body: response });
   } catch (err) {
     error(err);
