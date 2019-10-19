@@ -2,9 +2,9 @@
   "name": "s3-manager-server",
   "version": "0.1.0",
   "author": "Tommaso Zagni",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start.local": "npx sls offline start"
+    "start.local": "npx sls offline start --port=4000"
   },
   "dependencies": {
     "@types/aws-lambda": "^8.10.33",

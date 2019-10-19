@@ -1,17 +1,13 @@
 get-upload-persigned-url:
   handler: getUploadPresignedUrl/index.getUploadPresignedUrl
-  iamRoleStatements:
-    - Effect: Allow
-      Action:
-        - s3:PutObject
-      Resource: arn:aws:s3:::${self:custom.S3_BUCKET_NAME}/*
-        
+
   environment:   
     S3_BUCKET_NAME: ${self:custom.S3_BUCKET_NAME}
-    REGION: "us-west-2"   
+    REGION: ${self:custom.REGION}
 
   events:
     - http:
         path: get-upload-persigned-url
         method: POST
         cors: true
+        

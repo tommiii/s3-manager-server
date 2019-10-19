@@ -3,7 +3,7 @@ get-objects:
   iamRoleStatements:
     - Effect: Allow
       Action:
-        - s3:PutObject
+        - s3:ListBucket
       Resource: arn:aws:s3:::${self:custom.S3_BUCKET_NAME}/*
         
   environment:   

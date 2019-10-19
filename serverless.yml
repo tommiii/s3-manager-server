@@ -2,6 +2,7 @@ service: s3-manager-server
 
 custom:
   S3_BUCKET_NAME: "s3-manager-bucket"
+  REGION: "us-east-2"
 
 provider:
   name: aws

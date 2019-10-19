@@ -5,6 +5,13 @@
     ],
     "jsRules": {},
     "rules": {
+        "no-console": true,
+        "no-trailing-spaces": [
+          "error",
+          {
+            "skipBlankLines": true
+          }
+        ],
         "interface-name": false
     },
     "rulesDirectory": []

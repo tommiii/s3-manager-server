@@ -8,7 +8,7 @@ upload-base-64:
         
   environment:   
     S3_BUCKET_NAME: ${self:custom.S3_BUCKET_NAME}
-    REGION: "us-west-2"   
+    REGION: ${self:custom.REGION}
 
   events:
     - http:
