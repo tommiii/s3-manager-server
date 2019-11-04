@@ -12,6 +12,6 @@ list-objects:
 
   events:
     - http:
-        path: get-objects
+        path: list-objects
         method: GET
         cors: true
