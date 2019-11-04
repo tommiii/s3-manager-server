@@ -16,4 +16,4 @@ plugins:
 functions:
   upload-base-64: ${file(./uploadBase64/serverless.functions.yml):upload-base-64}
   get-upload-persigned-url: ${file(./getUploadPresignedUrl/serverless.functions.yml):get-upload-persigned-url}
-  get-objects: ${file(./getObjects/serverless.functions.yml):get-objects}
+  get-objects: ${file(./listObjects/serverless.functions.yml):list-objects}

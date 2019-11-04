@@ -1,5 +1,5 @@
-get-objects:
-  handler: getObjects/index.getObjects
+list-objects:
+  handler: listObjects/index.listObjects
   iamRoleStatements:
     - Effect: Allow
       Action:
