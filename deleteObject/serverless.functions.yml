@@ -1,0 +1,13 @@
+delete-object:
+  handler: deleteObject/index.deleteObject
+
+  environment:   
+    S3_BUCKET_NAME: ${self:custom.S3_BUCKET_NAME}
+    REGION: ${self:custom.REGION}
+
+  events:
+    - http:
+        path: delete-object/{objectKey}
+        method: DELETE
+        cors: true
+        

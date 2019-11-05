@@ -5,15 +5,12 @@ import { Response } from "../libs";
 
 const { S3_BUCKET_NAME: Bucket, REGION: region } = process.env;
 
-interface Params {
-  Bucket: string;
-}
-
 exports.listObjects = async (event: APIGatewayEvent): Promise<any> => {
+  if (!Bucket) { return Response({ statusCode: 400, body: { message: "BadRequest" } }); }
   try {
     const s3: AWS.S3 = new AWS.S3({ signatureVersion: "v4", region });
-    const params: Params = {
-      Bucket: Bucket as string,
+    const params: AWS.S3.Types.ListObjectsRequest = {
+      Bucket,
     }
     const response = await s3.listObjects(params).promise();
     return Response({ statusCode: 200, body: response });
