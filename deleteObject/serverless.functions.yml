@@ -1,5 +1,10 @@
 delete-object:
   handler: deleteObject/index.deleteObject
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:DeleteObject
+      Resource: arn:aws:s3:::${self:custom.S3_BUCKET_NAME}/*
 
   environment:   
     S3_BUCKET_NAME: ${self:custom.S3_BUCKET_NAME}
