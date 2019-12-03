@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ### `npm run start.local`
 
-Runs the app in the development mode [http://localhost:3000](http://localhost:4000) 
+Runs the app in the development mode [http://localhost:4000](http://localhost:4000) 
 
 ### `serverless deploy`
 
